@@ -1,0 +1,136 @@
+.race-grid {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-gap: 0;
+
+	@media (min-width: $mq-medium){
+		grid-template-columns: minmax(15%, 300px) 1fr;
+		grid-template-rows: 1fr;
+	}
+}
+
+.race-select-col {
+	background: $gray-light;
+	border-right: 1px solid $slate;
+	overflow: scroll;
+
+	> ul {
+		list-style: none;
+		margin: 0 0 25vh 0;
+		padding: 0;
+		counter-reset: round;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+
+		> li {
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+
+			&::before {
+				counter-increment: round;
+				content: counter(round);
+				display: inline-block;
+				margin: 0.5rem;
+				text-align: right;
+				width: 2ch;
+			}
+
+			&:hover {
+				background: $gray-mid;
+
+				&::before {
+					color: white;
+				}
+			}
+
+			&.selected-round {
+				background: $red;
+				color: white;
+			}
+		}
+	}
+}
+
+.race-select-button {
+	display: block;
+	flex: 1 1 auto;
+	appearance: none;
+	border: 0;
+	background: none;
+	font-size: 1rem;
+	cursor: pointer;
+	text-align: left;
+	padding: 0.5rem 1rem 0.5rem 0.5rem;
+
+	.selected-round & {
+		color: white;
+	}
+}
+
+
+.race-table {
+	overflow: scroll;
+
+	header {
+		margin-bottom: 0.5rem;
+		padding: 1rem 2rem;
+
+		h2 {
+			margin: 0;
+			padding: 0;
+			font-size: 1.5rem;
+		}
+
+		h3 {
+			margin: 0 0 0.25rem 0;
+			padding: 0;
+			font-size: 1rem;
+			font-weight: normal;
+		}
+
+		small {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.25em;
+		}
+	}
+	
+	footer {
+		text-align: center;
+	}
+	
+	@media (min-width: $mq-small){
+		header h2 { font-size: 2rem; }
+		header h3 { font-size: 1.25rem; margin: 0 0 0.5rem 0; }
+	}
+}
+
+.grid-change {
+	display: inline-block;
+	font-size: 0.875rem;
+	font-weight: bold;
+	
+	&::before {
+		display: inline-block;
+		font-size: .5rem;
+		width: 1rem;
+	}
+	
+	&.grid-up {
+		color: $green;
+		
+		&::before {
+			content: '▲ ';
+		}
+	}
+	
+	&.grid-down {
+		color: $red;
+		
+		&::before {
+			content: '▼ ';
+		}
+	}
+}

@@ -1,0 +1,79 @@
+.chart {
+	border-spacing: 0;
+	background-color: white;
+	width: 100%;
+	margin-bottom: 25vh;
+		
+	thead {
+		background: $red_grad;
+		background-attachment: fixed;
+		color: white;
+		
+		th {
+			text-align: left;
+			padding: 0.5rem;
+			white-space: nowrap;
+
+			&:nth-child(1){
+				padding-left: 2rem;
+			}
+		}
+	}
+	
+	tbody {
+	
+		tr:nth-child(even){
+			background: lightgray;
+		}
+		
+		td {
+			padding: 0.5rem;
+			white-space: nowrap;
+
+			&:nth-child(1){
+				padding-left: 2rem;
+			}
+		}
+	}
+
+	tfoot {
+		td {
+			padding: 0.5rem;
+		}
+	}
+	
+	
+	@media (min-width: $mq-small){
+		
+		
+		caption {
+			padding: 0 0 0.5rem 0;
+		}
+	}
+	
+	
+	@media (max-width: $mq-small){
+			border: 0 none;
+	}
+	
+}
+
+@media (max-width: $mq-small){
+
+	.chart-wrap {
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+		border: 3px solid $red;
+	}
+
+}
+
+
+
+.nation-flag {
+	width: auto;
+	height: 1em;
+	margin-left: 1ch;
+	vertical-align: middle;
+	box-shadow: 0 0 1px rgba(black,0.5);
+}

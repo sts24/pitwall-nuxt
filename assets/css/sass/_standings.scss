@@ -1,0 +1,27 @@
+.standings {
+
+	@media (min-width: $mq-small){
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 1rem;
+	}
+	
+}
+
+.standings-table {
+	overflow: scroll;
+
+	header {
+		//margin: 2rem 0 0.5rem 0;
+		padding: 1rem 2rem;
+		
+		h2 {
+			margin: 0;
+		}
+	}
+	
+	@media (min-width: $mq-small){
+	//	header { margin: 0 0 0.5rem 0; }
+	}
+}

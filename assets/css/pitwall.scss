@@ -1,0 +1,105 @@
+@import 'sass/__prepend';
+
+* { box-sizing: border-box; }
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: $gray-dark;
+
+	@media (min-width: $mq-small){
+		font-size: 16px;
+	}
+}
+
+a {
+	color: $link-color;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+
+@import 'sass/_header';
+@import 'sass/_layout';
+@import 'sass/_type-select';
+@import 'sass/_chart';
+@import 'sass/_races';
+@import 'sass/_standings';
+@import 'sass/_loading';
+@import 'sass/_site-nav';
+
+
+.hide {
+	display: none;
+}
+
+
+
+// loading transitions
+
+
+.loading-transition {
+	transition: 1s opacity;
+	opacity: 1;
+}
+
+.is-loading {
+	opacity: 0;
+}
+
+
+// errors
+
+.error {
+	margin: 2rem;
+	background: $red;
+	color: white;
+	font-size: rem(32);
+	padding: 1rem;
+	display: inline-block;
+
+	a {
+		color: yellow;
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 100vh;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+
+	@media (max-width: 767px){
+		bottom: 0;
+		height: auto;
+	}
+}
+
+
+.button {
+	cursor: pointer;
+    display: inline-block;
+    font-size: 1.25em;
+    font-weight: bold;
+    border: 0;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    background: $gray-dark;
+    color: white;
+
+    &:hover {
+        background-color: $gray-mid;
+    }
+
+}

@@ -1,0 +1,34 @@
+.site-header {
+	position: relative;
+	color: white;
+	background-color: $slate;
+	display: flex;
+	justify-content: center;
+
+	a {
+		color: lighten($link-color,25%);
+	}
+}
+
+.header-contents {
+	padding: 1rem;
+	text-align: center;
+}
+
+.header-info {
+	p {
+		margin: 0;
+	}
+}
+
+.site-title {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	margin: 0 auto 1rem auto;
+
+	@media (max-width: $mq-small){
+		max-width: $header-width;
+		margin-bottom: 1rem;
+	}
+}

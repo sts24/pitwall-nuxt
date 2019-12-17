@@ -1,3 +1,4 @@
+import axios from 'axios'
 
 export default {
   mode: 'spa',
@@ -34,7 +35,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
@@ -58,6 +59,17 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+
+  generate: {
+    routes () {
+      return axios.get('https://ergast.com/api/f1/seasons.json?limit=1000')
+        .then((res) => {
+          return res.data.MRData.SeasonTable.Seasons.map((year) => {
+            return '/' + year.season
+          })
+        })
     }
   }
 }
