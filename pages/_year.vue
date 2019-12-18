@@ -7,8 +7,8 @@
         <label for="season-select">Select a Season</label>
         <div class="season-select-wrapper">
           <select id="season-select" v-model="selectSeason" class="season-select">
-            <option v-for="season in f1data.seasons" v-bind="season.index" :value="season" :key="season">
-              {{ season }}
+            <option v-for="season in f1data.seasons" v-bind="season.index" :value="season.season" :key="season.season">
+              {{ season.season }}
             </option>
           </select>
         </div>
@@ -63,10 +63,10 @@ export default {
     ...mapState([ 'f1data', 'viewOptions' ]),
     selectSeason: {
       get () {
-        return this.$store.state.viewOptions.seasonSelect
+        return this.$route.params.year
       },
       set (newSeason) {
-        this.$store.dispatch('getData', newSeason)
+        this.$router.push({ name: 'year', params: { year: newSeason } })
       }
     }
   },
@@ -81,5 +81,5 @@ export default {
 </script>
 
 <style lang="scss">
-	@import '~/assets/css/pitwall.scss'
+  @import '~/assets/css/pitwall.scss'
 </style>
