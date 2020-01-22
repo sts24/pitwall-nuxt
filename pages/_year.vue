@@ -4,14 +4,7 @@
 
     <main class="grid-area">
       <nav class="type-select">
-        <label for="season-select">Select a Season</label>
-        <div class="season-select-wrapper">
-          <select id="season-select" v-model="selectSeason" class="season-select">
-            <option v-for="season in f1data.seasons" v-bind="season.index" :value="season.season" :key="season.season">
-              {{ season.season }}
-            </option>
-          </select>
-        </div>
+        <SeasonSelectMenu />
 
         <ul class="site-nav">
           <li>
@@ -51,26 +44,25 @@ import constructorstandings from '~/components/constructorsStandings.vue'
 import driverstandings from '~/components/driversStandings.vue'
 import raceresult from '~/components/raceResult.vue'
 import pageHeader from '~/components/pageHeader.vue'
+import SeasonSelectMenu from '~/components/SeasonSelectMenu.vue'
 
 export default {
   components: {
     constructorstandings,
     driverstandings,
     raceresult,
-    pageHeader
+    pageHeader,
+    SeasonSelectMenu
   },
-  computed: {
-    ...mapState([ 'f1data', 'viewOptions' ]),
-    selectSeason: {
-      get () {
-        return this.$route.params.year
-      },
-      set (newSeason) {
-        this.$router.push({ name: 'year', params: { year: newSeason } })
-      }
+  computed: mapState([
+    'f1data',
+    'viewOptions'
+  ]),
+  async fetch ({ store, route, payload }) {
+    if (route.params.year === undefined) {
+      const currentYear = new Date().getFullYear()
+      route.params.year = currentYear
     }
-  },
-  async fetch ({ store, route }) {
     await store.dispatch('getData', route.params.year)
   },
   methods: mapMutations([

@@ -31,9 +31,6 @@ export const actions = {
     state.state.f1data.races.reverse()
   },
   getData ({ commit }, loadYear) {
-    console.log(loadYear)
-    // const currentYear = new Date().getFullYear()
-
     commit('setLoading', true)
 
     function getRaceData (loadYear) {

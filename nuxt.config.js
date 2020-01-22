@@ -64,12 +64,28 @@ export default {
 
   generate: {
     routes () {
-      return axios.get('https://ergast.com/api/f1/seasons.json?limit=1000')
+      const years = axios.get('https://ergast.com/api/f1/seasons.json?limit=1000')
         .then((res) => {
           return res.data.MRData.SeasonTable.Seasons.map((year) => {
-            return '/' + year.season
+            return {
+              route: '/' + year.season,
+              payload: year.season
+            }
           })
         })
+
+      const indexPage = [{
+        route: '/',
+        params: {
+          year: '2020'
+        },
+        payload: { year: '2020' }
+      }]
+
+      return Promise.all([years, indexPage]).then((values) => {
+        return [...values[0], ...values[1]]
+      })
+
     }
   }
 }

@@ -60,4 +60,7 @@ export default {
     </nav>
     <raceTable :item="f1data.races[round]" />
   </section>
+  <section v-else>
+    <p class="message">No race data avalible. The season may not have started yet.</p>
+  </section>
 </template>
