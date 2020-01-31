@@ -10,7 +10,7 @@ export default {
   ]),
   methods: {
     flagImgPath (nation) {
-      return process.env.BASE_URL + '/nation-flags/' + nation.replace(' ', '') + '.svg'
+      return '/images/nation-flags/' + nation.replace(' ', '') + '.svg'
     }
   }
 }

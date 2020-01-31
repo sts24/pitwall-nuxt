@@ -16,7 +16,7 @@ export default {
       return c_list.join(', ')
     },
     flagImgPath (nation) {
-      return process.env.BASE_URL + '/nation-flags/' + nation.replace(' ', '') + '.svg'
+      return '/images/nation-flags/' + nation.replace(' ', '') + '.svg'
     }
   }
 }
