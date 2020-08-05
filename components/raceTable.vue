@@ -1,51 +1,47 @@
 <script>
-import { mapState } from 'vuex'
-import formatDate from '@/components/formatDate.vue'
+	import { mapState } from "vuex";
+	import formatDate from "@/components/formatDate.vue";
 
-export default {
+	export default {
+		name: "RaceTable",
+		components: {
+			formatDate,
+		},
+		props: ["item"],
+		computed: {
+			...mapState(["f1data", "viewOptions"]),
+		},
+		data() {
+			return {
+				showAllResults: false,
+			};
+		},
+		methods: {
+			gridDiff(car) {
+				const gridDiff = car.grid - car.position;
+				return gridDiff;
+			},
+			gridFinishDiff(gridStart, finishPos) {
+				const gridDiff = gridStart - finishPos;
 
-  name: 'RaceTable',
-  components: {
-    formatDate
-  },
-  props: ['item'],
-  computed: {
-    ...mapState([ 'f1data', 'viewOptions' ])
-  },
-  data () {
-    return {
-      showAllResults: false
-    }
-  },
-  methods: {
-    gridDiff (car) {
-      const gridDiff = (car.grid - car.position)
-      return gridDiff
-    },
-    gridFinishDiff (gridStart, finishPos) {
-      const gridDiff = (gridStart - finishPos)
-
-      if (gridDiff > 0) {
-        return '⬆︎' + gridDiff
-      } else if (gridDiff < 0) {
-        return '⬇︎' + Math.abs(gridDiff)
-      }
-    },
-    flagImgPath (nation) {
-      return '/images/nation-flags/' + nation.replace(' ', '') + '.svg'
-    },
-    gridStart (gridStart) {
-      if (gridStart == 0) {
-        return 'Pits'
-      } else {
-        return gridStart
-      }
-    }
-
-  }
-
-}
-
+				if (gridDiff > 0) {
+					return "⬆︎" + gridDiff;
+				} else if (gridDiff < 0) {
+					return "⬇︎" + Math.abs(gridDiff);
+				}
+			},
+			flagImgPath(nation) {
+				return "/images/nation-flags/" + nation.replace(" ", "") + ".svg";
+			},
+			gridStart(gridStart) {
+				if (gridStart == 0) {
+					return "Pits";
+				} else {
+					return gridStart;
+				}
+			},
+		},
+	};
 </script>
 
 <template>
@@ -100,6 +96,13 @@ export default {
             <td>{{ car.points }}</td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <button @click="showAllResults = true">Show Entire Results</button>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   </section>

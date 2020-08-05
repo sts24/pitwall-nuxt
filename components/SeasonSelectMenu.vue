@@ -1,5 +1,5 @@
 <template>
-  <div class="season-select-widget">
+  <nav class="season-select-widget">
     <label for="season-select">Select a Season</label>
     <div class="season-select-wrapper">
       <select id="season-select" v-model="selectSeason" class="season-select">
@@ -8,24 +8,27 @@
         </option>
       </select>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+	import { mapState } from "vuex";
 
-export default {
-  name: 'SeasonSelectMenu',
-  computed: {
-    ...mapState([ 'f1data', 'viewOptions' ]),
-    selectSeason: {
-      get () {
-        return this.$route.params.year
-      },
-      set (newSeason) {
-        this.$router.push({ name: 'year', params: { year: newSeason } })
-      }
-    }
-  }
-}
+	export default {
+		name: "SeasonSelectMenu",
+		computed: {
+			...mapState(["f1data", "viewOptions"]),
+			selectSeason: {
+				get() {
+					return this.$route.params.year;
+				},
+				set(newSeason) {
+					this.$router.push({
+						name: "year",
+						params: { year: newSeason },
+					});
+				},
+			},
+		},
+	};
 </script>

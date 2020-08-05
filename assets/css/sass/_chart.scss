@@ -2,7 +2,6 @@
 	border-spacing: 0;
 	background-color: white;
 	width: 100%;
-	margin-bottom: 25vh;
 		
 	thead {
 		background: $red_grad;
@@ -60,11 +59,11 @@
 
 @media (max-width: $mq-small){
 
-	.chart-wrap {
-		overflow-x: scroll;
-		-webkit-overflow-scrolling: touch;
-		border: 3px solid $red;
-	}
+	// .chart-wrap {
+	// 	overflow-x: scroll;
+	// 	-webkit-overflow-scrolling: touch;
+	// 	border: 3px solid $red;
+	// }
 
 }
 

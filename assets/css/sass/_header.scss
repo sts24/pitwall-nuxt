@@ -1,9 +1,9 @@
 .site-header {
-	position: relative;
 	color: white;
 	background-color: $slate;
-	display: flex;
-	justify-content: center;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 
 	a {
 		color: lighten($link-color,25%);
@@ -15,11 +15,6 @@
 	text-align: center;
 }
 
-.header-info {
-	p {
-		margin: 0;
-	}
-}
 
 .site-title {
 	width: 100%;

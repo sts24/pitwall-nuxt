@@ -1,17 +1,19 @@
 <script>
-export default {
-  name: 'Pageheader'
-}
+	import SeasonSelectMenu from "~/components/SeasonSelectMenu.vue";
+	export default {
+		name: "Pageheader",
+		components: {
+			SeasonSelectMenu,
+		},
+	};
 </script>
 
 <template>
   <header class="site-header">
     <div class="header-contents">
-      <img srcset="@/assets/images/pitwall-horizontal.svg" class="site-title">
-
-      <div class="header-info">
-        <p>Created by <a href="https://www.smithscott.net" target="_blank">Scott Smith</a>. Learn more about this project <a href="https://github.com/sts24/pitwall-nuxt" target="_blank">on the GitHub page.</a></p>
-      </div>
+      <img srcset="@/assets/images/pitwall-horizontal.svg" class="site-title" width="400" height="41" />
     </div>
+
+    <SeasonSelectMenu />
   </header>
 </template>

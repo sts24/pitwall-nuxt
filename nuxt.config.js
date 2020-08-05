@@ -1,12 +1,13 @@
 import axios from 'axios'
 
 export default {
+  target: 'static',
   mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'The Pitwall',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -58,13 +59,13 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   },
 
   generate: {
-    routes () {
-      const years = axios.get('https://ergast.com/api/f1/seasons.json?limit=1000')
+    routes() {
+      return axios.get('https://ergast.com/api/f1/seasons.json?limit=1000')
         .then((res) => {
           return res.data.MRData.SeasonTable.Seasons.map((year) => {
             return {
@@ -72,20 +73,7 @@ export default {
               payload: year.season
             }
           })
-        })
-
-      const indexPage = [{
-        route: '/',
-        params: {
-          year: '2020'
-        },
-        payload: { year: '2020' }
-      }]
-
-      return Promise.all([years, indexPage]).then((values) => {
-        return [...values[0], ...values[1]]
-      })
-
+        });
     }
   }
 }
