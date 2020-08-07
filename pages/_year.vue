@@ -9,9 +9,9 @@
       <raceresult :key="'races-'+viewOptions.seasonSelect" v-if="viewOptions.selectedTab == 'races'" />
 
 
-      <!-- <section v-if="viewOptions.loading == true" class="overlay">
+      <section v-if="viewOptions.loading == true" class="overlay">
         <div class="loading-spinner" />
-      </section> -->
+      </section>
     </main>
 </template>
 

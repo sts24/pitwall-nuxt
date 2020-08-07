@@ -4,6 +4,7 @@
 	position: sticky;
 	top: 0;
 	z-index: 1000;
+	padding: 1rem 0;
 
 	a {
 		color: lighten($link-color,25%);
@@ -11,8 +12,8 @@
 }
 
 .header-contents {
-	padding: 1rem;
 	text-align: center;
+	margin-bottom: 1rem;
 }
 
 
@@ -20,7 +21,7 @@
 	width: 100%;
 	max-width: 400px;
 	height: auto;
-	margin: 0 auto 1rem auto;
+	margin: 0 auto 0 auto;
 
 	@media (max-width: $mq-small){
 		max-width: $header-width;
