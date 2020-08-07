@@ -7,13 +7,8 @@
 				</button>
 			</li>
 			<li>
-				<button :class="{'selected': viewOptions.selectedTab === 'drivers'}" v-on:click="setTab('drivers')" class="site-nav-button">
-					Driver's Championship
-				</button>
-			</li>
-			<li>
-				<button :class="{'selected': viewOptions.selectedTab === 'constructors'}" v-on:click="setTab('constructors')" class="site-nav-button">
-					Constructor's Championship
+				<button :class="{'selected': viewOptions.selectedTab === 'standings'}" v-on:click="setTab('standings')" class="site-nav-button">
+					Standings
 				</button>
 			</li>
 		</ul>

@@ -1,11 +1,11 @@
 <script>
 	import { mapState, mapActions } from "vuex";
-	import raceTable from "@/components/raceTable.vue";
+	import RaceTable from "@/components/RaceTable.vue";
 
 	export default {
 		name: "Raceresult",
 		components: {
-			raceTable,
+			RaceTable,
 		},
 		computed: mapState(["f1data", "viewOptions"]),
 		data() {
@@ -41,9 +41,6 @@
 
 <template>
   <section v-if="f1data.races.length > 0" class="race-grid">
-    <raceTable :item="race" v-for="(race) in f1data.races" :key="race.date" />
-  </section>
-  <section v-else>
-    <p class="message">No race data avalible. The season may not have started yet.</p>
+    <RaceTable :item="race" v-for="(race) in f1data.races" :key="race.date" />
   </section>
 </template>

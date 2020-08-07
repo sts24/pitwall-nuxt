@@ -1,4 +1,4 @@
-.standings {
+.standings-data {
 
 	@media (min-width: $mq-small){
 		display: grid;
@@ -10,18 +10,11 @@
 }
 
 .standings-table {
-	//overflow: scroll;
-
 	header {
-		//margin: 2rem 0 0.5rem 0;
-		padding: 1rem 2rem;
+		padding: 1rem 0;
 		
 		h2 {
 			margin: 0;
 		}
-	}
-	
-	@media (min-width: $mq-small){
-	//	header { margin: 0 0 0.5rem 0; }
 	}
 }

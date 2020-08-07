@@ -1,6 +1,5 @@
 .type-select {
 	background: $gray-light;
-	border-right: 1px solid $slate;
 
 	label {
 		display: block;
@@ -62,7 +61,9 @@
 .site-nav {
     padding: 0;
     margin: 2rem 0;
-    list-style: none;
+	list-style: none;
+	
+	display: flex;
 
     > li {
         padding: 0;
