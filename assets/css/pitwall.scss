@@ -7,15 +7,15 @@ body {
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
-	color: $gray-dark;
+	color: var(--gray-dark);
 
-	@media (min-width: $mq-small){
+	@media (min-width: 1025px){
 		font-size: 16px;
 	}
 }
 
 a {
-	color: $link-color;
+	color: var(--link-color);
 
 	&:hover {
 		text-decoration: none;
@@ -57,7 +57,7 @@ a {
 
 .error {
 	margin: 2rem;
-	background: $red;
+	background: var(--red);
 	color: white;
 	font-size: rem(32);
 	padding: 1rem;
@@ -95,11 +95,11 @@ a {
     border: 0;
     padding: 0.5rem 1rem;
     margin: 0;
-    background: $gray-dark;
+    background: var(--gray-dark);
     color: white;
 
     &:hover {
-        background-color: $gray-mid;
+        background-color: var(--gray-mid);
     }
 
 }

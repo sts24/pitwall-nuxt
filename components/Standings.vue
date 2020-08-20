@@ -1,6 +1,6 @@
 <template>
 
-	<section class="standings-data">
+	<section class="standings-data content-container">
 		<Driverstandings />
 
 		

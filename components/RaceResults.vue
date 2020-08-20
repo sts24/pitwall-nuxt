@@ -40,7 +40,7 @@
 </script>
 
 <template>
-  <section v-if="f1data.races.length > 0" class="race-grid">
+  <section v-if="f1data.races.length > 0" class="race-grid content-container">
     <RaceTable :item="race" v-for="(race) in f1data.races" :key="race.date" />
   </section>
 </template>

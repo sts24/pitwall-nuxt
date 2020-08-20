@@ -1,5 +1,5 @@
 .type-select {
-	background: $gray-light;
+	border-bottom: 2px solid lightgray;
 
 	label {
 		display: block;
@@ -22,7 +22,7 @@
 	font-weight: bold;
 	padding: 0;
 	border: 0;
-	background-color: $red;
+	background-color: var(--red);
 	
 	
 	background-image: url('/assets/images/arrow-down.svg');
@@ -49,7 +49,7 @@
 		}
 	}
 	
-	@media (min-width: $mq-small){
+	@media (min-width: 1025px){
 		background-size: 1.25rem auto;
 		
 		select { font-size: 1.25rem; }
@@ -60,7 +60,7 @@
 
 .site-nav {
     padding: 0;
-    margin: 2rem 0;
+    margin: auto;
 	list-style: none;
 	
 	display: flex;
@@ -82,15 +82,20 @@
     padding: 0.5rem 1rem;
     margin: 0;
     background: rgba(white,0.1);
-    color: $gray-dark;
+    color: var(--gray-dark);
     text-align: left;
 
     &:hover {
-        background: rgba(white,0.4);
-    }
+        background: var(--gray-light);
+	}
+	
+	&:focus {
+		outline: 0;
+		box-shadow: inset 0 0 0 2px var(--slate);
+	}
 
     &.selected {
-		background: $red_grad;
+		background: var(--red);
 		color: white;
     }
 

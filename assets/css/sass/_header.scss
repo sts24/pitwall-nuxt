@@ -1,13 +1,13 @@
 .site-header {
 	color: white;
-	background-color: $slate;
+	background-color: var(--slate);
 	position: sticky;
 	top: 0;
 	z-index: 1000;
 	padding: 1rem 0;
 
 	a {
-		color: lighten($link-color,25%);
+		color: var(--link-color);
 	}
 }
 
@@ -23,8 +23,8 @@
 	height: auto;
 	margin: 0 auto 0 auto;
 
-	@media (max-width: $mq-small){
-		max-width: $header-width;
+	@media (max-width: 1025px){
+		max-width: var(--header-width);
 		margin-bottom: 1rem;
 	}
 }
