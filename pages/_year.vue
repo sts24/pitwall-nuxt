@@ -34,9 +34,10 @@
 			}
 			await store.dispatch("getData", route.params.year);
 		},
+		head(){
+			return {
+				title: this.viewOptions.seasonSelect + ' Season - The Pitwall'
+			}
+		}
 	};
 </script>
-
-<style lang="scss">
-	@import "~/assets/css/pitwall.scss";
-</style>
