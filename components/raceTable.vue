@@ -36,9 +36,7 @@
       <table v-bind:class="{ 'show-all': showAllResults }" class="chart">
         <thead>
           <tr>
-            <th class="th-pos">
-              Pos
-            </th>
+            <th class="th-pos">Pos</th>
             <th>Driver</th>
             <th>Grid</th>
             <th>No.</th>
@@ -50,22 +48,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="car in item.Results" :key="car.index">
-            <td>{{ car.positionText }}</td>
-            <td>
+          <tr v-for="car in item.Results" :key="car.index" class="row-position">
+            <td class="td-position">{{ car.positionText }}</td>
+            <td class="td-driver">
               <a :href="car.Driver.url" target="_blank">{{ car.Driver.givenName }} {{ car.Driver.familyName }}</a>
               <img :src="flagImgPath(car.Driver.nationality)" :alt="car.Driver.nationality" class="nation-flag">
             </td>
-            <td>{{ car.grid }}</td>
-            <td>{{ car.number }}</td>
-            <td>
+            <td class="td-grid"><span class="mobile-only">Started: </span> {{ car.grid }}</td>
+            <td class="td-car-number">{{ car.number }}</td>
+            <td class="td-constructor">
               <a :href="car.Constructor.url" target="_blank">{{ car.Constructor.name }}</a>
               <img :src="flagImgPath(car.Constructor.nationality)" :alt="car.Constructor.nationality" class="nation-flag">
             </td>
-            <td>{{ car.FastestLap ? car.FastestLap.Time.time : '' }}</td>
-            <td>{{ car.laps }}</td>
-            <td>{{ car.Time ? car.Time.time : '' }}</td>
-            <td>{{ car.points }}</td>
+            <td class="td-fastest-lap"><span class="mobile-only">Fastest Lap:</span> {{ car.FastestLap ? car.FastestLap.Time.time : '' }}</td>
+            <td class="td-laps"><span class="mobile-only">Laps:</span> {{ car.laps }}</td>
+            <td class="td-time"><span class="mobile-only">Time:</span> {{ car.Time ? car.Time.time : '' }}</td>
+            <td class="td-points">{{ car.points }} <span class="mobile-only">Pts</span></td>
           </tr>
         </tbody>
         <tfoot v-if="showAllResults == false">

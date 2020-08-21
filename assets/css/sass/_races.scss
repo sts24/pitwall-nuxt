@@ -1,6 +1,10 @@
 .race-table {
 	margin-bottom: 3rem;
 
+	a {
+		text-decoration: none;
+	}
+
 	tbody tr:nth-child(n+11){
 		display: none;
 	}
@@ -41,7 +45,91 @@
 		header h2 { font-size: 2rem; }
 		header h3 { font-size: 1.25rem; margin: 0 0 0.5rem 0; }
 	}
+
+	@media (max-width: 768px){
+		.chart {
+			display: block;
+
+			thead {
+				display: none;
+			}
+
+			tbody {
+				display: block;
+
+				tr {
+					td {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }
+
+
+
+@media (max-width: 768px){
+	tr.row-position {
+		border: 1px solid var(--gray-mid);
+		border-radius: 0.5rem;
+		margin: 1rem 0 0 0;
+		padding: 0.5rem;
+
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		//grid-gap: 0.5rem;
+		grid-column-gap: 0.5rem;
+		grid-template-areas: 
+			"position driver number"
+			"points constructor ."
+			". grid ."
+			". fastestlap ."
+			". time ."
+			". laps .";
+	}
+
+
+
+	.td-position {
+		grid-area: position;
+		font-weight: bold;
+		font-size: 2rem;
+		line-height: normal;
+	}
+	.td-driver {
+		grid-area: driver;
+		font-size: 1.25rem;
+		margin-bottom: 0.25rem;
+		align-self: end;
+	}
+	.td-grid {
+		grid-area: grid;
+	}
+	.td-car-number {
+		grid-area: number;
+	}
+	.td-constructor {
+		grid-area: constructor;
+	}
+	.td-fastest-lap {
+		grid-area: fastestlap;
+	}
+	.td-laps {
+		grid-area: laps;
+	}
+	.td-time {
+		grid-area: time;
+	}
+	.td-points {
+		grid-area: points;
+		color: var(--gray-mid);
+		font-size: 0.75rem;
+	}
+	
+
+}
+
 
 .grid-change {
 	display: inline-block;

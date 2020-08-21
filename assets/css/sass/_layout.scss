@@ -4,6 +4,10 @@
 }
 
 .content-container {
-	max-width: 60vw;
-	margin: auto;
+	margin: 0 1rem;
+
+	@media (min-width: 768px){
+		max-width: 60vw;
+		margin: auto;
+	}
 }

@@ -4,37 +4,34 @@
 	width: 100%;
 	
 
-	thead {
-		th {
-			text-align: left;
-			font-size: 0.875rem;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: gray;
-
-			border-bottom: 1px solid gray;
-		}
-	}
-
-	tbody {
-		td {
-			border-bottom: 1px solid lightgray;
-			line-height: 2em;
-		}
-	}
 	
+	
+	@media (min-width: 768px){
+
+		thead {
+			th {
+				text-align: left;
+				font-size: 0.875rem;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: gray;
+	
+				border-bottom: 1px solid gray;
+			}
+		}
+	
+		tbody {
+			td {
+				border-bottom: 1px solid lightgray;
+				line-height: 2em;
+			}
+		}
+		
+	}
 	
 }
 
-@media (max-width: 1025px){
 
-	// .chart-wrap {
-	// 	overflow-x: scroll;
-	// 	-webkit-overflow-scrolling: touch;
-	// 	border: 3px solid var(--red);
-	// }
-
-}
 
 .reveal-btn {
 	border: 0;
