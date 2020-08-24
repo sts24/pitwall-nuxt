@@ -60,12 +60,12 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
     }
   },
 
   generate: {
-    routes() {
+    routes () {
       return axios.get('https://ergast.com/api/f1/seasons.json?limit=1000')
         .then((res) => {
           return res.data.MRData.SeasonTable.Seasons.map((year) => {
@@ -74,7 +74,7 @@ export default {
               payload: year.season
             }
           })
-        });
+        })
     }
   }
 }
