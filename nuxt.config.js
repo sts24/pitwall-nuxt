@@ -25,7 +25,7 @@ export default {
   ** Global CSS
   */
   scss: [
-    '@/assets/css/pitwall.scss'
+
   ],
   /*
   ** Plugins to load before mounting the App
