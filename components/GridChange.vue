@@ -5,7 +5,9 @@
 <script>
 export default {
   name: 'GridChange',
-  props: ['data'],
+  props: {
+    'data': Object
+  },
   methods: {
     gridFinishDiff (gridStart, finishPos) {
       const gridDiff = gridStart - finishPos
