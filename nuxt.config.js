@@ -3,9 +3,6 @@ import axios from 'axios'
 export default {
   target: 'static',
   mode: 'spa',
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'The Pitwall',
     meta: [
@@ -17,49 +14,22 @@ export default {
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
-  scss: [
-
-  ],
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    // '@nuxtjs/eslint-module'
-  ],
-  /*
-  ** Nuxt.js modules
-  */
+  plugins: [],
+  buildModules: [],
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+  styleResources: {
+    scss: [
+        'assets/css/pitwall.scss'
+    ]
+},
   axios: {
   },
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend (config, ctx) {
     }
   },
