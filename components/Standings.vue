@@ -8,8 +8,8 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import ConstructorStandings from '~/components/ConstructorsStandings'
-import Driverstandings from '~/components/DriversStandings'
+import ConstructorStandings from './ConstructorsStandings.vue'
+import Driverstandings from './DriversStandings.vue'
 
 export default {
   name: 'Standings',

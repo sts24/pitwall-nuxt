@@ -6,13 +6,6 @@
 export default {
   name: 'GridChange',
   props: ['data'],
-  computed: {
-    gridDiff () {
-      const gridChange = this.data.grid - this.data.position
-
-      console.log(gridChange)
-    }
-  },
   methods: {
     gridFinishDiff (gridStart, finishPos) {
       const gridDiff = gridStart - finishPos

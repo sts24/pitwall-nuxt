@@ -3,7 +3,6 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'Constructorsstandings',
-  props: ['item'],
   computed: mapState([
     'f1data',
     'viewOptions'

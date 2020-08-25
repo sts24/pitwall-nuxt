@@ -1,6 +1,6 @@
 <script>
 import { mapState } from 'vuex'
-import formatDate from '@/components/formatDate.vue'
+import formatDate from './formatDate.vue'
 
 export default {
   name: 'RaceTable',

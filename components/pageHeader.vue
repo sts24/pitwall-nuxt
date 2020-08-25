@@ -1,5 +1,5 @@
 <script>
-import SeasonSelectMenu from '~/components/SeasonSelectMenu.vue'
+import SeasonSelectMenu from './SeasonSelectMenu.vue'
 export default {
   name: 'Pageheader',
   components: {

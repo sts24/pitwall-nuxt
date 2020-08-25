@@ -1,6 +1,6 @@
 <script>
 import { mapState, mapActions } from 'vuex'
-import RaceTable from '@/components/RaceTable.vue'
+import RaceTable from './RaceTable.vue'
 
 export default {
   name: 'Raceresult',

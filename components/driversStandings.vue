@@ -9,11 +9,11 @@ export default {
   ]),
   methods: {
     constructorsList (items) {
-      const c_list = []
+      const cList = []
       for (let i = 0; i < items.length; i++) {
-        c_list[i] = items[i].name
+        cList[i] = items[i].name
       }
-      return c_list.join(', ')
+      return cList.join(', ')
     },
     flagImgPath (nation) {
       return '/images/nation-flags/' + nation.replace(' ', '') + '.svg'
@@ -56,9 +56,4 @@ export default {
     </div>
   </section>
 
-  <section v-else class="overlay">
-    <p class="message">
-      No driver's standings data availible for this season.
-    </p>
-  </section>
 </template>
